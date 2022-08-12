@@ -25,8 +25,6 @@ const romanToInt = (s) => {
       return null;
     })
     .filter(item => item !== null);
-
-    console.log(str)
     return {normal: str.split(''), edge: edgesArr}
   }
   
