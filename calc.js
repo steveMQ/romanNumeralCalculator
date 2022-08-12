@@ -28,13 +28,12 @@ const romanToInt = (str) => {
     .forEach(([key,value]) => {
       if (str.includes(key)){
         str = str.replaceAll(key,`-${value}`);
+        values[key] = null;
       }
     })
-
+  
   return str.split('-')
     .filter(item => item != '')
     .map(item => parseInt(item))
     .reduce((acc, num) => acc + num)
 };
-
-romanToInt("MCDLXXIII");
