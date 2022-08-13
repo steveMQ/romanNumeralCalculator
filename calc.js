@@ -25,7 +25,7 @@ const romanCalc = (str) => {
   } 
   
   return [str].concat(Object.entries(values))
-    .reduce((acc, kek) => acc.replaceAll(kek[0], `-${kek[1]}`))
+    .reduce((acc, val) => acc.replaceAll(val[0], `-${val[1]}`))
     .split('-')
     .filter(item => item != '')
     .map(item => parseInt(item))
