@@ -5,7 +5,7 @@
 
 console.clear();
 
-const romanToInt = (str) => {
+const romanCalc = (str) => {
   
   const values = {
     "IV": 4,
@@ -37,3 +37,5 @@ const romanToInt = (str) => {
     .map(item => parseInt(item))
     .reduce((acc, num) => acc + num)
 };
+
+console.log(romanCalc('MMDCCXV'));
