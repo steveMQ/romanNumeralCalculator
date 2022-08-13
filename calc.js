@@ -21,21 +21,16 @@ const romanCalc = (str) => {
     "C": 100,
     "D": 500,
     "M": 1000,
+    
   } 
-
-  Object
-    .entries(values)
-    .forEach(([key,value]) => {
-      if (str.includes(key)){
-        str = str.replaceAll(key,`-${value}`);
-        values[key] = null;
-      }
-    })
   
-  return str.split('-')
+  return [str].concat(Object.entries(values))
+    .reduce((acc, kek) => acc.replaceAll(kek[0], `-${kek[1]}`))
+    .split('-')
     .filter(item => item != '')
     .map(item => parseInt(item))
     .reduce((acc, num) => acc + num)
 };
 
-console.log(romanCalc('MMDCCXV'));
+const output = romanCalc('MMDCCXV')
+console.log(output)
