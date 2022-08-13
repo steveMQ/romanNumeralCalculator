@@ -21,7 +21,6 @@ const romanCalc = (str) => {
     "C": 100,
     "D": 500,
     "M": 1000,
-    
   } 
   
   return [str].concat(Object.entries(values))
@@ -30,7 +29,7 @@ const romanCalc = (str) => {
     .filter(item => item != '')
     .map(item => parseInt(item))
     .reduce((acc, num) => acc + num)
-};
+}
 
 const output = romanCalc('MMDCCXV')
 console.log(output)
