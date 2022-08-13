@@ -30,6 +30,3 @@ const romanCalc = (str) => {
     .map(item => parseInt(item))
     .reduce((acc, num) => acc + num)
 }
-
-const output = romanCalc('MMDCCXV')
-console.log(output)
