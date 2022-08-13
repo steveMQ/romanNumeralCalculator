@@ -26,7 +26,8 @@ const romanCalc = (str) => {
   return [str].concat(Object.entries(values))
     .reduce((acc, val) => acc.replaceAll(val[0], `-${val[1]}`))
     .split('-')
-    .filter(item => item != '')
-    .map(item => parseInt(item))
-    .reduce((acc, num) => acc + num)
+    .slice(1)
+    .reduce((acc, num) => parseInt(acc) + parseInt(num))
 }
+
+console.log(romanCalc('MMMDCCXXIV'))
